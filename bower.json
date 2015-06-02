@@ -1,0 +1,26 @@
+{
+  "name": "angular-datepicker",
+  "version": "0.0.0",
+  "homepage": "https://github.com/locator-kn/angular-datepicker",
+  "authors": [
+    "Dennis Moosmann <info@DennisMoosmann.de>"
+  ],
+  "description": "AngularJS directive for a jQuery datepicker",
+  "main": "js/directive.js",
+  "keywords": [
+    "angular",
+    "directive",
+    "datepicker"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
