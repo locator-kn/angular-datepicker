@@ -7,3 +7,15 @@ The angular-datepicker is an angular directive using jQuery code from here http:
 * angular v1.2+
 
 * jqueryUI v1.11+ 
+
+# setup
+
+*  download source or 
+
+*  install via bower
+
+```
+
+bower install angular-daterange-picker --save
+
+```
