@@ -59,14 +59,14 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
                         setTimeout(function() {
                             $('.dp-highlight').first().addClass('round-left');
                             $('.dp-highlight').last().addClass('round-right');
-                        }, 0)
+                        }, 0);
 
                     },
                     onChangeMonthYear: function(year, month, inst) {
                         setTimeout(function() {
                             $('.dp-highlight').first().addClass('round-left');
                             $('.dp-highlight').last().addClass('round-right');
-                        }, 0)
+                        }, 0);
                     }
                 });
             }
