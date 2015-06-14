@@ -70,7 +70,7 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
                         setTimeout(addBorderClasses, 0);
                     }
                 });
-            }
+            };
             $scope.show();
         },
         template: template.join('')
