@@ -12,6 +12,13 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
         controller: function($scope) {
             var _startDate = '';
             var _endDate = '';
+
+            function addBorderClasses() {
+                var $el = $('.dp-highlight');
+                $el.first().addClass('round-left');
+                $el.last().addClass('round-right');
+                $scope.$apply();
+            }
             $scope.show = function() {
                 $scope.dateFormat = 'yy-mm-dd';
                 $scope.picker = angular.element(".datepicker");
@@ -56,17 +63,11 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
                         if (_endDate != null && _endDate != '') {
                             $scope.endDateReal = new Date(tempEndDate.toISOString()).toISOString();
                         }
-                        setTimeout(function() {
-                            $('.dp-highlight').first().addClass('round-left');
-                            $('.dp-highlight').last().addClass('round-right');
-                        }, 0);
+                        setTimeout(addBorderClasses, 0);
 
                     },
                     onChangeMonthYear: function(year, month, inst) {
-                        setTimeout(function() {
-                            $('.dp-highlight').first().addClass('round-left');
-                            $('.dp-highlight').last().addClass('round-right');
-                        }, 0);
+                        setTimeout(addBorderClasses, 0);
                     }
                 });
             }
