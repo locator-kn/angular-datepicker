@@ -26,8 +26,18 @@
     height:1.8em;
 }
 
-.ui-datepicker .ui-datepicker-next{
+.ui-datepicker .ui-datepicker-next {
+    bottom: 1px;
     right:2px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    bottom: 1px;
+    left:2px;
+}
+
+.ui-datepicker .ui-datepicker-prev:active {
+    background-color: transparent;
 }
 
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
@@ -40,12 +50,17 @@
 }
 
 .ui-datepicker .ui-datepicker-prev span {
-    background-image: url("http://blog.picol.org/wp-content/themes/icon_blog/images/css_images/arrow_left_16.png");
+    background-image: url("../images/pfeil_links.png");
+    background-size: 9px 13px;
+    background-position: center;
     cursor:pointer;
 }
 
 .ui-datepicker .ui-datepicker-next span {
-    background-image: url("http://blog.picol.org/wp-content/themes/icon_blog/images/css_images/arrow_right_16.png");
+    background-image: url("../images/pfeil_rechts.png");
+    background-position: center;
+    background-size: 9px 13px;
+    background-color: transparent;
     cursor:pointer;
 }
 
