@@ -114,7 +114,7 @@
 }
 
 .ui-state-highlight a,.ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a  {
-    color:rgb(241, 100, 73);
+    color:#ff4637;
 }
 
 .ui-state-disabled,.ui-widget-content .ui-state-disabled,.ui-widget-header .ui-state-disabled {
@@ -137,7 +137,7 @@
 }
 
 .dp-highlight .ui-state-default {
-    background: rgb(241, 100, 73);
+    background: #ff4637;
     color: #000;
 }
 
