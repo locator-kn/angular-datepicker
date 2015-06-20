@@ -6,7 +6,8 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
     return {
         scope: {
             startDateReal: '=',
-            endDateReal: '='
+            endDateReal: '=',
+            onLinked: '='
         },
 
         controller: function($scope) {
@@ -28,17 +29,34 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
                     minDate: 0,
 
                     beforeShowDay: function(date) {
-                        var startDate = $.datepicker.parseDate($scope.dateFormat, _startDate);
-                        var endDate = $.datepicker.parseDate($scope.dateFormat, _endDate);
+                        var startDate;
+                        var endDate;
+
+                        if ($scope.onLinked) {
+                            startDate = new Date($scope.startDateReal);
+                            startDate.setHours(0);
+                            endDate = new Date($scope.endDateReal);
+                            endDate.setHours(0);
+                        } else {
+                            startDate = $.datepicker.parseDate($scope.dateFormat, _startDate);
+                            endDate = $.datepicker.parseDate($scope.dateFormat, _endDate);
+                        }
+
+                        if (endDate == '' || endDate == null) {
+                            $scope.endDateReal = '';
+                        }
+
                         if (startDate != null && endDate != null) {
                             if (startDate > endDate) {
                                 startDate = [endDate, endDate = startDate][0];
                             }
                         }
+                        setTimeout(addBorderClasses, 0);
                         return [true, startDate && ((date.getTime() == startDate.getTime()) || (endDate && date >= startDate && date <= endDate)) ? "dp-highlight" : ""];
 
                     },
                     onSelect: function(dateText, inst) {
+                        $scope.onLinked = false;
                         var startDate = $.datepicker.parseDate($scope.dateFormat, _startDate);
                         var endDate = $.datepicker.parseDate($scope.dateFormat, _endDate);
 
