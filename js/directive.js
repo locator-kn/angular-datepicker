@@ -1,5 +1,25 @@
 "use strict";
 
+// Returns a function, that, as long as it continues to be invoked, will not
+// be triggered. The function will be called after it stops being called for
+// N milliseconds. If `immediate` is passed, trigger the function on the
+// leading edge, instead of the trailing.
+// borrowed from http://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
 angular.module('locator.datepicker', []).directive('datepicker', function() {
     var template = ['<div class="datepicker"></div>'];
 
@@ -14,12 +34,14 @@ angular.module('locator.datepicker', []).directive('datepicker', function() {
             var _startDate = '';
             var _endDate = '';
 
-            function addBorderClasses() {
+
+            function _addBorderClasses() {
                 var $el = $('.dp-highlight');
                 $el.first().addClass('round-left');
                 $el.last().addClass('round-right');
                 $scope.$apply();
             }
+            var addBorderClasses = debounce(_addBorderClasses, 50, true);
             $scope.show = function() {
                 $scope.dateFormat = 'yy-mm-dd';
                 $scope.picker = angular.element(".datepicker");
