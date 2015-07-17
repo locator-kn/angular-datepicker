@@ -50,14 +50,14 @@
 }
 
 .ui-datepicker .ui-datepicker-prev span {
-    background-image: url("../images/arrow_left.png");
+    background-image: url("../images/arrow_left.svg");
     background-size: 9px 13px;
     background-position: center;
     cursor:pointer;
 }
 
 .ui-datepicker .ui-datepicker-next span {
-    background-image: url("../images/arrow_right.png");
+    background-image: url("../images/arrow_right.svg");
     background-position: center;
     background-size: 9px 13px;
     background-color: transparent;
