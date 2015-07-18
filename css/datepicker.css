@@ -92,6 +92,7 @@
 .ui-datepicker td {
     border:0;
     padding:1px 0px 1px 0px;
+    height:20px;
 }
 
 .ui-datepicker td span,.ui-datepicker td a {
@@ -142,8 +143,8 @@
 }
 
 .dp-highlight .ui-state-default .test {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .datepicker {
@@ -163,10 +164,10 @@
 }
 
 .datepicker .round-left a{
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 .datepicker .round-right a{
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
